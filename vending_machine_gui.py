@@ -120,6 +120,7 @@ class VendingMachine:
             content.add_widget(Label(text=msg))
             popup = Popup(title="Maintenance Required", content=content, size_hint=(0.5, 0.5))
             popup.open()
+            
         else:
             msg = "Vending machine {} is in good condition.".format(self.serial)
             content = BoxLayout(orientation='vertical')
@@ -134,14 +135,6 @@ class VendingMachineApp(App):
         vm= VendingMachine(inventory={"candy": 10, "soda": 10, "chips": 10, "cookies": 10}, serial="VM001", days_until_maintenance=5)
         vm.sales_menu(None)
         return Widget()
-    
-
-
-
-
-
-    
-
 
 if __name__== '__main__':
     VendingMachineApp().run()
